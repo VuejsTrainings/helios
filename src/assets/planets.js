@@ -47,5 +47,12 @@ export default [
     position: 6,
     diametre: 116464,
     matiere: 'gazeuse'
+  },
+  {
+    name: 'Neptune',
+    description: 'La planète bleue, la seule habitée.',
+    position: 8,
+    diametre: 58954,
+    matiere: 'gazeuse'
   }
 ]
