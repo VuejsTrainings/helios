@@ -22,7 +22,10 @@ export default {
   name: 'PlanetCard',
   props: ['planet'],
   methods: {
-    deletingPlanet (evt) {
+    /**
+     * Soumet la suppression d"une planète à la liste.
+     */
+    deletingPlanet () {
       this.$emit('deleting')
     }
   }
