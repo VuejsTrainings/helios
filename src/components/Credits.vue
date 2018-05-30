@@ -12,24 +12,24 @@
     Citons, en vrac et sans ordre précis:
     <ul>
       <li>
+        <i class="fa fa-bullhorn text-secondary"></i>
         <a href="//www.wikipedia.fr">Wikipedia</a>
-        <i class="fa fa-speaker text-secondary"></i>
       </li>
       <li>
+        <i class="fa fa-images text-secondary"></i>
         <a href="//images.google.com">Google Images</a>
-        <i class="fa fa-picture text-secondary"></i>
       </li>
       <li>
+        <i class="fab fa-jedi-order text-success"></i>
         <a href="//www.starwars.com">Disney&trade;'s Star Wars&trade;</a>
-        <i class="fa fa-yoda text-success"></i>
       </li>
       <li>
-        <a href="//www.encyclopedie-universalis.fr">Universalis</a>
         <i class="fa fa-book text-secondary"></i>
+        <a href="//www.encyclopedie-universalis.fr">Universalis</a>
       </li>
     </ul>
   </p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
 </div>
 </template>
 
@@ -38,3 +38,9 @@ export default {
   name: 'Credits'
 }
 </script>
+
+<style scoped>
+  ul li{
+    list-style: none;
+  }
+</style>
