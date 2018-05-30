@@ -5,7 +5,7 @@
         </h3>
         <section class="row justify-content-md-center">
             <div class="col-md-3" style="margin-top:1em" v-for="(planete,index) in planetes" :key="index">
-                <planet-card v-bind:planet="planete" v-bind:index="index" @deleting="deletePlanet(index)"></planet-card>
+                <planet-card v-bind:planet="planete"  @deleting="deletePlanet(index)"></planet-card>
             </div>
         </section>
     </div>

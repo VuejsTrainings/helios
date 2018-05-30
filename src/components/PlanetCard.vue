@@ -20,7 +20,7 @@
 <script>
 export default {
   name: 'PlanetCard',
-  props: ['planet', 'index'],
+  props: ['planet'],
   methods: {
     deletingPlanet (evt) {
       this.$emit('deleting')
