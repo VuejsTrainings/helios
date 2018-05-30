@@ -6,9 +6,11 @@
       <p class="card-text">{{ planet.description }}</p>
     </div>
     <div class="card-footer text-right">
-      <a href="#" class="btn btn-primary">
+
+      <!-- <router-link :to="{name:'PlanetDetail',params:{planete:planet.name}}"   class="btn btn-primary"> -->
+      <router-link :to="`/planete/${planet.name}`" class="btn btn-primary">
         <i class="fa fa-eye" title="Plus d'informations"></i>
-      </a>
+      </router-link>
       <a href="#" class="btn btn-warning">
         <i class="fa fa-edit" style="color:#fff" title="Editer"></i>
       </a>

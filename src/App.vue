@@ -8,10 +8,10 @@
       <h2>Gestion des planètes du système solaire Star Wars</h2>
     <router-view/>
     <footer class="footer">
-      <router-link to="Credits">
+      <!-- <router-link to="/credits"> -->
+      <router-link v-bind:to="{name:'Credits'}">
         Crédits
       </router-link>
-
     </footer>
   </div>
 </template>
