@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import PlanetList from '@/components/PlanetList'
 import Credits from '@/components/Credits'
 import PlanetDetail from '@/components/PlanetDetail'
+import NotFound from '@/components/NotFound'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       name: 'PlanetDetail',
       component: PlanetDetail,
       props: true
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound
     }
 
   ]

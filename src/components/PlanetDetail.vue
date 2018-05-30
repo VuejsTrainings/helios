@@ -16,6 +16,23 @@ export default {
       planetObject: Planetes.find((item) => item.name === this.planete)
     }
   },
-  name: 'PlanetDetail'
+  name: 'PlanetDetail',
+  beforeRouteEnter (to, from, next) {
+    let op = Planetes.find((item) => item.name === to.params.planete)
+    if (!op) {
+      next({path: '/NotFound'})
+    } else {
+      next()
+    }
+  },
+  beforeRouteUpdate (to, from, next) {
+    let op = Planetes.find((item) => item.name === to.params.planete)
+    if (!op) {
+      next({path: '/NotFound'})
+    } else {
+      next()
+    }
+  }
+
 }
 </script>
