@@ -22,5 +22,9 @@ footer{
   border-top:1px solid #ddd;
   margin-top:1em;
   padding:0.5em 0.25em;
+  /* position:fixed;
+  width:100%;
+  bottom:0;
+  background:#fff; */
 }
 </style>
