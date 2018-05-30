@@ -55,5 +55,27 @@ export default [
     position: 8,
     diametre: 58954,
     matiere: 'gazeuse'
+
+  },
+  {
+    name: 'Alderaan',
+    description: 'La planète des Ewoks, qui ressemble à la Terre.',
+    position: 32,
+    diametre: 98665,
+    matiere: 'rocheuse'
+  },
+  {
+    name: 'Tatoooine',
+    description: 'La planète où a grandi Luke Skywalker.',
+    position: 11,
+    diametre: 9877,
+    matiere: 'rocheuse'
+  },
+  {
+    name: 'Coruscant',
+    description: 'La planète où siège la République.',
+    position: 1,
+    diametre: 9895,
+    matiere: 'rocheuse'
   }
 ]
