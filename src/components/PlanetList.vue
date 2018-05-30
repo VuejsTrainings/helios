@@ -4,8 +4,8 @@
             Liste des planètes
         </h3>
         <section class="row justify-content-md-center">
-            <div class="col-md-3" style="margin-top:1em" v-for="planete in planetes" :key="planete.position">
-                <planet-card :planet="planete"></planet-card>
+            <div class="col-md-3" style="margin-top:1em" v-for="(planete,index) in planetes" :key="index">
+                <planet-card v-bind:planet="planete"></planet-card>
             </div>
         </section>
     </div>
