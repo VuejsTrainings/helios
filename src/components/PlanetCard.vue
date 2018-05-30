@@ -7,11 +7,12 @@
     </div>
     <div class="card-footer text-right">
       <a href="#" class="btn btn-primary">
-        <i class="fa fa-plus-circle"></i>
+        <i class="fa fa-eye" title="Plus d'informations"></i>
       </a>
       <a href="#" class="btn btn-warning">
-        <i class="fa fa-edit" style="color:#fff"></i>
+        <i class="fa fa-edit" style="color:#fff" title="Editer"></i>
       </a>
+      <i class="fa fa-times btn btn-danger" style="color:#fff" title="Supprimer" v-on:click="deletingPlanet"></i>
     </div>
   </div>
 </template>
@@ -19,7 +20,12 @@
 <script>
 export default {
   name: 'PlanetCard',
-  props: ['planet']
+  props: ['planet', 'index'],
+  methods: {
+    deletingPlanet (evt) {
+      this.$emit('deleting')
+    }
+  }
 }
 </script>
 

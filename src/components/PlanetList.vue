@@ -5,7 +5,7 @@
         </h3>
         <section class="row justify-content-md-center">
             <div class="col-md-3" style="margin-top:1em" v-for="(planete,index) in planetes" :key="index">
-                <planet-card v-bind:planet="planete"></planet-card>
+                <planet-card v-bind:planet="planete" v-bind:index="index" @deleting="deletePlanet(index)"></planet-card>
             </div>
         </section>
     </div>
@@ -24,6 +24,11 @@ export default {
   },
   components: {
     'planet-card': PlanetCard
+  },
+  methods: {
+    deletePlanet (index) {
+      this.planetes.splice(index, 1)
+    }
   }
 }
 </script>
