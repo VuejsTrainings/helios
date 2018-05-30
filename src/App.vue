@@ -5,6 +5,9 @@
       Helios</h1>
       <h2>Gestion des planètes du système solaire Star Wars</h2>
     <router-view/>
+    <footer class="footer">
+      <a href="#">Crédits</a>
+    </footer>
   </div>
 </template>
 
@@ -15,5 +18,9 @@ export default {
 </script>
 
 <style>
-
+footer{
+  border-top:1px solid #ddd;
+  margin-top:1em;
+  padding:0.5em 0.25em;
+}
 </style>
