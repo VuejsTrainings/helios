@@ -20,6 +20,7 @@ export default [
     diametre: 4879,
     matiere: 'rocheuse'
   },
+
   {
     name: 'Venus',
     description: 'La planète bleue, la seule habitée.',
