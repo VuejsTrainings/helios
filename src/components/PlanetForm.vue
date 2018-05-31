@@ -41,13 +41,11 @@
 </template>
 
 <script>
-import Planetes from '@/assets/planets.js'
 export default {
   name: 'PlanetForm',
   props: ['planete'],
   data () {
-    let planetes = Planetes
-    let planet = planetes.find(chqPlanete => chqPlanete.name === this.planete)
+    let planet = this.$root.getPlaneteFromStorage({name: this.planete})
     return {
       planetObject: planet,
       required: ['name', 'position', 'diametre', 'matiere']
@@ -62,12 +60,13 @@ export default {
   },
   methods: {
     formSubmit (ev) {
-      // Validation du formulaire
+      // Validation du formulaire (si besoin)
 
       // Transmission des données pour leur persistance
+      this.$root.savePlaneteInStorage(this.planete, this.planetObject)
 
-      // Envoi information + "rediriger"
-
+      // Retour utilisateur ou "rediriger"
+      this.$router.push({name: 'PlanetList'})
     }
   }
 }

@@ -12,14 +12,13 @@
 </template>
 
 <script>
-import Planetes from '@/assets/planets.js'
 import PlanetCard from '@/components/PlanetCard.vue'
 
 export default {
   name: 'PlanetList',
   data () {
     return {
-      planetes: Planetes
+      planetes: this.$root.getPlanetesFromStorage()
     }
   },
   components: {
@@ -27,7 +26,10 @@ export default {
   },
   methods: {
     deletePlanet (index) {
+      // Suppression des data de Vue
       this.planetes.splice(index, 1)
+      // Suppression du localStorage
+      this.$root.setPlanetesInStorage(this.planetes)
     }
   }
 }

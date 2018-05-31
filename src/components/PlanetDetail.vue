@@ -9,14 +9,13 @@
   </div>
 </template>
 <script>
-import Planetes from '@/assets/planets'
 import NotFound from '@/components/NotFound.vue'
 
 export default {
   props: ['planete'],
   data () {
     return {
-      planetObject: Planetes.find(item => item.name === this.planete)
+      planetObject: this.$root.getPlaneteFromStorage({name: this.planete}) // un truc qui ne me donne qu'une planète à partir de son nom
     }
   },
   name: 'PlanetDetail',
