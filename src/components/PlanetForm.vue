@@ -45,7 +45,10 @@ export default {
   name: 'PlanetForm',
   props: ['planete'],
   data () {
-    let planet = this.$root.getPlaneteFromStorage({name: this.planete})
+    let planet = {}
+    if (this.planete) {
+      planet = this.$root.getPlaneteFromStorage({name: this.planete})
+    }
     return {
       planetObject: planet,
       required: ['name', 'position', 'diametre', 'matiere']

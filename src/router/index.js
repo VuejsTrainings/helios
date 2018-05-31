@@ -27,6 +27,12 @@ export default new Router({
       props: true
     },
     {
+      path: '/planete/add',
+      name: 'PlanetAdd',
+      component: PlanetForm,
+      props: true
+    },
+    {
       path: '/planete/:planete',
       name: 'PlanetDetail',
       component: PlanetDetail,

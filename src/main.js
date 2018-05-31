@@ -34,7 +34,11 @@ new Vue({
     savePlaneteInStorage (name, planete) {
       let planetes = this.getPlanetesFromStorage()
       let index = planetes.findIndex(item => item.name === name)
-      planetes.splice(index, 1, planete)
+      if (index !== -1) {
+        planetes.splice(index, 1, planete)
+      } else {
+        planetes.push(planete)
+      }
       this.setPlanetesInStorage(planetes)
     }
   },

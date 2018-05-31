@@ -2,6 +2,10 @@
     <div class="row">
         <h3>
             Liste des planètes
+            <router-link :to="{name:'PlanetAdd'}">
+              <i class="fa fa-plus-circle btn btn-primary"></i>
+
+            </router-link>
         </h3>
         <section class="row justify-content-md-center">
             <div class="col-md-3" style="margin-top:1em" v-for="(planete,index) in planetes" :key="index">
