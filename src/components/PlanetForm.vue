@@ -10,17 +10,17 @@
       <li class="form-group">
         <label for="positionCtl">Position</label>
         <input type="number" class="form-control" min="1" step="1" id="positionCtl"
-          placeholder="1" v-model="planetObject.position" required>
+          placeholder="1" v-model="planetObject.position" :required="required.indexOf('position')!==-1">
       </li>
       <li class="form-group">
         <label for="diametreCtl">Diamètre</label>
         <input type="number" class="form-control" min="1" step="1" id="diametreCtl"
-          placeholder="15620" v-model="planetObject.diametre" required>
+          placeholder="15620" v-model="planetObject.diametre" :required="required.indexOf('diametre')!==-1">
       </li>
       <li class="form-group">
         <label for="typeCtl">Type</label>
         <select class="form-control" id="typeCtl"
-            v-model="planetObject.matiere" required>
+            v-model="planetObject.matiere" :required="required.indexOf('matiere')!==-1">
           <option>rocheuse</option>
           <option>gazeuse</option>
           <option>naine</option>
@@ -29,11 +29,12 @@
       <li class="form-group">
         <label for="descriptionCtl">Description</label>
         <textarea class="form-control" id="descriptionCtl" rows="5"
-            v-model="planetObject.description" required></textarea>
+            v-model="planetObject.description" :required="required.indexOf('description')!==-1"></textarea>
       </li>
       <li class="form-group">
         <label for="htmlCtl">Article</label>
-        <textarea class="form-control" id="htmlCtl" rows="5" v-model="planetObject.html"></textarea>
+        <textarea class="form-control" id="htmlCtl" rows="5"
+          v-model="planetObject.html" :required="required.indexOf('html')!==-1"></textarea>
       </li>
     <button type="submit" class="btn btn-success"
         :disabled="notValid">OK</button>
@@ -58,7 +59,7 @@ export default {
   computed: {
     notValid () {
       let valid = (Object.keys(this.planetObject).length > 0)
-      this.required.forEach(att => { valid = valid && !(this.planetObject[att] === '') })
+      this.required.forEach(att => { valid = valid && !(this.planetObject[att] === undefined) && !(this.planetObject[att] === '') })
       return !valid
     }
   },
