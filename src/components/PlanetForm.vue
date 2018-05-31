@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     notValid () {
-      let valid = true
+      let valid = (Object.keys(this.planetObject).length > 0)
       this.required.forEach(att => { valid = valid && !(this.planetObject[att] === '') })
       return !valid
     }
