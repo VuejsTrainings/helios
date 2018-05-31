@@ -35,7 +35,8 @@
         <label for="htmlCtl">Article</label>
         <textarea class="form-control" id="htmlCtl" rows="5" v-model="planetObject.html"></textarea>
       </li>
-    <button type="submit" class="btn btn-success" :disabled="notValid">Submit</button>
+    <button type="submit" class="btn btn-success"
+        :disabled="notValid">OK</button>
     </ul>
   </form>
 </template>
@@ -66,7 +67,7 @@ export default {
       // Validation du formulaire (si besoin)
 
       // Transmission des données pour leur persistance
-      this.$root.savePlaneteInStorage(this.planete, this.planetObject)
+      this.$root.savePlaneteInStorage(this.planetObject)
 
       // Retour utilisateur ou "rediriger"
       this.$router.push({name: 'PlanetList'})

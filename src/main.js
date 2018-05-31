@@ -31,9 +31,9 @@ new Vue({
       console.log(val)
       return planetes.find(item => item[field] === val)
     },
-    savePlaneteInStorage (name, planete) {
+    savePlaneteInStorage (planete) {
       let planetes = this.getPlanetesFromStorage()
-      let index = planetes.findIndex(item => item.name === name)
+      let index = planetes.findIndex(item => item.name === planete.name)
       if (index !== -1) {
         planetes.splice(index, 1, planete)
       } else {
@@ -42,7 +42,7 @@ new Vue({
       this.setPlanetesInStorage(planetes)
     }
   },
-  mounted () {
+  beforeMount () {
     if (!window.localStorage.getItem('planetes')) {
       this.setPlanetesInStorage(Planetes)
     }
