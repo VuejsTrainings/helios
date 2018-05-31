@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PlanetList from '@/components/PlanetList'
-import Credits from '@/components/Credits'
-import PlanetDetail from '@/components/PlanetDetail'
 import NotFound from '@/components/NotFound'
+import Credits from '@/components/Credits'
+import PlanetList from '@/components/PlanetList'
+import PlanetDetail from '@/components/PlanetDetail'
+import PlanetForm from '@/components/PlanetForm'
 
 Vue.use(Router)
 
@@ -18,6 +19,12 @@ export default new Router({
       path: '/credits',
       name: 'Credits',
       component: Credits
+    },
+    {
+      path: '/planete/edit/:planete',
+      name: 'PlanetEdit',
+      component: PlanetForm,
+      props: true
     },
     {
       path: '/planete/:planete',

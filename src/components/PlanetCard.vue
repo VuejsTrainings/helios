@@ -11,9 +11,9 @@
       <router-link :to="`/planete/${planet.name}`" class="btn btn-primary">
         <i class="fa fa-eye" title="Plus d'informations"></i>
       </router-link>
-      <a href="#" class="btn btn-warning">
+      <router-link :to="{name:'PlanetEdit',params:{planete:planet.name}}" class="btn btn-warning">
         <i class="fa fa-edit" style="color:#fff" title="Editer"></i>
-      </a>
+      </router-link>
       <i class="fa fa-times btn btn-danger" style="color:#fff" title="Supprimer" v-on:click="deletingPlanet"></i>
     </div>
   </div>
