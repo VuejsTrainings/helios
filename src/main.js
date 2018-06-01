@@ -16,6 +16,9 @@ new Vue({
   components: { App },
   template: '<App/>',
   methods: {
+    getPlanetesFromApi () {
+      return this.$http.get('http://localhost:3000/planets')
+    },
     getPlanetesFromStorage () {
       return JSON.parse(window.localStorage.getItem('planetes'))
     },

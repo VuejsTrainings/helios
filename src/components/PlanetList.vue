@@ -21,8 +21,13 @@ import PlanetCard from '@/components/PlanetCard.vue'
 export default {
   name: 'PlanetList',
   data () {
+    this.$root.getPlanetesFromApi()
+      .then(res => {
+        this.planetes = res.body
+      })
+    // setTimeout(() => { this.planetes = [{id: 1, name: 'Terre'}] }, 1000)
     return {
-      planetes: this.$root.getPlanetesFromStorage()
+      planetes: []
     }
   },
   components: {
