@@ -5,7 +5,7 @@
   "author": "Eric Guyader <ericguyader@yahoo.fr>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "concurrently \"json-server ../simple-http-server/planets.json\" \"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js\"",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -33,6 +33,7 @@
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
     "chromedriver": "^2.27.2",
+    "concurrently": "^3.5.1",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
     "cross-spawn": "^5.0.1",
