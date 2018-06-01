@@ -48,8 +48,15 @@ export default {
   props: ['planete'],
   data () {
     let planet = {}
+    // if (this.planete) {
+    //   planet = this.$root.getPlaneteFromStorage({name: this.planete})
+    // }
+    console.log(this.planete)
     if (this.planete) {
-      planet = this.$root.getPlaneteFromStorage({name: this.planete})
+      this.$root.getUnePlaneteFromResourceByName(this.planete)
+        .then(res => {
+          this.planetObject = res.body[0]
+        })
     }
     return {
       planetObject: planet,
@@ -68,6 +75,11 @@ export default {
       // Validation du formulaire (si besoin)
 
       // Transmission des données pour leur persistance
+      if (this.planetObject.id) {
+        this.$root.updatePlaneteViaResource(this.planetObject)
+      } else {
+        this.$root.addPlaneteViaResource(this.planetObject)
+      }
       this.$root.savePlaneteInStorage(this.planetObject)
 
       // Retour utilisateur ou "rediriger"

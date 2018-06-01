@@ -15,10 +15,37 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
+  data () {
+    return {
+      planetResource: Vue.resource('http://localhost:3000/planets{/id}')
+    }
+  },
   methods: {
+    // Via Vue.resource
+    getPlanetesFromResource () {
+      return this.planetResource.query()
+    },
+    getUnePlaneteFromResource (id) {
+      return this.planetResource.get({id: id})
+    },
+    getUnePlaneteFromResourceByName (name) {
+      return this.planetResource.query({name: name})
+    },
+    updatePlaneteViaResource (planetObject) {
+      return this.planetResource.update({id: planetObject.id}, planetObject)
+    },
+    addPlaneteViaResource (planetObject) {
+      return this.planetResource.save(planetObject)
+    },
+    // API
     getPlanetesFromApi () {
       return this.$http.get('http://localhost:3000/planets')
     },
+    deletePlaneteFromAPI (id) {
+      return this.$http.delete('http://localhost:3000/planets/' + id)
+    },
+
+    // Storage
     getPlanetesFromStorage () {
       return JSON.parse(window.localStorage.getItem('planetes'))
     },
